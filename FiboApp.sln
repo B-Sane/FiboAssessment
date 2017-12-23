@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiboApp", "FiboApp\FiboApp.csproj", "{EE6B9E08-37E9-4E5D-AFDB-DEB4DBA3DE6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiboApp.Computation", "FiboApp.Computation\FiboApp.Computation.csproj", "{4AE0697E-5A96-4EE3-9275-174C2D9CFED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiboApp.Computation.Tests", "FiboApp.Computation.Tests\FiboApp.Computation.Tests.csproj", "{7D17B8A7-CBA6-4A7E-A162-F40F5D1764A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE6B9E08-37E9-4E5D-AFDB-DEB4DBA3DE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6B9E08-37E9-4E5D-AFDB-DEB4DBA3DE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6B9E08-37E9-4E5D-AFDB-DEB4DBA3DE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6B9E08-37E9-4E5D-AFDB-DEB4DBA3DE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE0697E-5A96-4EE3-9275-174C2D9CFED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE0697E-5A96-4EE3-9275-174C2D9CFED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE0697E-5A96-4EE3-9275-174C2D9CFED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE0697E-5A96-4EE3-9275-174C2D9CFED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D17B8A7-CBA6-4A7E-A162-F40F5D1764A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D17B8A7-CBA6-4A7E-A162-F40F5D1764A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D17B8A7-CBA6-4A7E-A162-F40F5D1764A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D17B8A7-CBA6-4A7E-A162-F40F5D1764A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
