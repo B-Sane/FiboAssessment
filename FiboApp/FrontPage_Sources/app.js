@@ -14,53 +14,46 @@ $(document).ready(function(){
 		$parent.removeClass('is-focused');
 	})
 
-	//Sending the form to the API
-	$('.button').click('submit', function(e){
 
 	var port = "54902";
-	var apiUrl = "http://localhost:"+port+"/api/itg/v1/fibonacci";
+	var apiUrl = "http://localhost:"+port+"/api/itg/v1/fibonacci/sequence";
 	
 	//Format data from form into json
-	var dataToSend = JSON.stringify(
-									{"Start" : $('#Start').val(), 
-									"End": $('#End').val()}
-									);
-	var dto = $('form.formulaire').serialize();
-	var dataToSend2 = {"Start" : $('#Start').val(),"End": $('#End').val()};
-		
+	var form = document.querySelector("form");
+	    // Gestion de la soumission du formulaire
+	form.addEventListener("submit", function (e) {
+	    e.preventDefault();
 
-		  var sendTheRequest = function(webAppUrl)
-		  {
-		  	return new Promise(function(resolve, reject){
-		  		
-		  		var xhr = new window.XMLHttpRequest()
-		  		xhr.onreadystatechange = function(){
-			  	if(xhr.readyState === 4 && xhr.status === 200){
-			  		resolve(xhr.responseText)
-			  	}
-			  	else{
-			  		reject(xhr)
-			  	}
-			  	}
-			  	xhr.open('POST',webAppUrl, true)
-			  	debugger;
-			  	xhr.send(dataToSend2);
-			
-		  	})
-		  }
+	    var dataToSend = JSON.stringify({
+	        "start": $('#start').val(),
+	        "end": $('#end').val()
+	    });
+        
+	    //Sending the form to the api
+	    ajaxPost(apiUrl, dataToSend);
+	});
 
-		  var catchError = function(e){
-		  	debugger;
-		  	console.error('Ajax Error', e)
-		  }
+    
+	function ajaxPost(url, data) {
+	    var req = new XMLHttpRequest();
+	    req.open("POST", url);
+	    req.onreadystatechange = function () {
+	        if (req.readyState === XMLHttpRequest.DONE && (req.status === 200 || req.status === 0)) {
+	            $('.form').hide();
+	            //Insert API response in the page
+	            var resp = JSON.parse(req.responseText);
+	            $('#result').html("<p>Here is the Result with [" + $('#start').val()+ "-" + $('#end').val()+"] as boundaries  : <p><br>" + resp);
 
-
-		  sendTheRequest(apiUrl).then(function(response){
-		  		var resp = JSON.parse(response)
-		  		 $('#result').html("<p>Result : <p><br>"+resp);			
-		  		console.log(resp)
-		  }).catch(catchError)
-
-	})
+	            //Add a link for trying again
+	            $('#try-again').html("<a href=\"index.html\">try again</a>")
+                
+	        } else {
+	            console.error(req.status + " " + req.statusText + " " + url);
+	        }
+	    };
+        
+	    req.setRequestHeader("Content-type", "application/json; charset=utf-8");
+	    req.send(data);
+	}
 
 })
