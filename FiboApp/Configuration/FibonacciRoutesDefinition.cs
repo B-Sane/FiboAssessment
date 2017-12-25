@@ -13,6 +13,6 @@
         /// <summary>
         /// suffix route for getting the sequence
         /// </summary>
-        public const string GetFibonacciSequence = "fibonacci";
+        public const string GetFibonacciSequence = "fibonacci/sequence";
     }
 }

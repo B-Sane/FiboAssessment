@@ -12,6 +12,9 @@ namespace FibonacciApp.Controllers
     [RoutePrefix(FibonacciRoutesDefinition.RootApiV1)]
     public class FibonacciController : ApiController
     {
+        /// <summary>
+        /// IComputationService.
+        /// </summary>
         public readonly IComputationService _computationService;
 
         /// <summary>
