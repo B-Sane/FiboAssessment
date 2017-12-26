@@ -14,9 +14,7 @@ $(document).ready(function(){
 		$parent.removeClass('is-focused');
 	})
 
-
-	var port = "54902";
-	var apiUrl = "http://localhost:"+port+"/api/itg/v1/fibonacci/sequence";
+	var apiUrl = "/api/itg/v1/fibonacci/sequence";
 	
 	//Format data from form into json
 	var form = document.querySelector("form");
